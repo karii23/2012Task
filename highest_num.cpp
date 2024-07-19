@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
 int main()
 {
     int choice;
@@ -78,20 +77,51 @@ int main()
         if(highest_val > 0)
         {
             int prime_num;
-            for(int j=1; j<highest_val; j++){
-                for(int i=2; i<=j/2; ++i){
-                    if(j%i == 0){
-                        break;
-                    }
-                    else if(i == j/2) prime_num = j;
+            if(highest_val < 6)
+            {
+                if(highest_val == 5)
+                {
+                    cout<<"The highest prime number in the range 1 to "<<highest_val<<" is "<<"5";
+                }
+                else if(highest_val == 3)
+                {
+                    cout<<"The highest prime number in the range 1 to "<<highest_val<<" is "<<"3";
+                }
+                else if(highest_val == 2)
+                {
+                    cout<<"The highest prime number in the range 1 to "<<highest_val<<" is "<<"2";
+                }
+                else if(highest_val == 4)
+                {
+                    cout<<"The highest prime number in the range 1 to "<<highest_val<<" is "<<"3";
+                } 
+                else
+                {
+                    cout<<"No prime number found";
                 }
             }
-             cout<<"The highest prime number in the range 1 to "<<highest_val<<" is: "<<prime_num;
+            else
+            {
+                for(int j=1; j<=highest_val; j++)
+                {
+                    for(int i=2; i<=j/2; ++i)
+                    {
+                        if(j%i == 0)
+                        {
+                            break;
+                        }
+                        else if(i == j/2)
+                        {
+                            prime_num = j;
+                        }
+                    }
+                }
+                cout<<"The highest prime number in the range 1 to "<<highest_val<<" is: "<<prime_num;
+            }
         }
         break;
 
-
-    default:
+        default:
         cout<<"Select a number from 1 to 3 according to your choice";
         break;
     }
